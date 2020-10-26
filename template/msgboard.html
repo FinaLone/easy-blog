@@ -1,0 +1,57 @@
+{{ define "msgboard.html" }}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Msgboard</title>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" type="text/css" href="../static/css/common.css">
+</head>
+
+<body>
+    <fieldset>
+        <legend>留言</legend>
+        <form action="/msgboard" method='post'>
+            <div>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name">
+            </div>
+            <div>
+                <label for="mail">Mail:</label>
+                <input type="email" id="mail" name="mail">
+            </div>
+            <div>
+                <label for="msg">Message:</label>
+                <textarea id="msg" name="msg"></textarea>
+            </div>
+            <div>
+                <button type="submit">Push Message!</button>
+            </div>
+        </form>
+    </fieldset>
+
+    <div class="msglist">
+        {{if len .}}
+            <table border="1">
+                <tr>
+                    <th>留言ID</th>
+                    <th>留言人</th>
+                    <th>邮箱</th>
+                    <th>留言时间</th>
+                    <th>留言内容</th>
+                </tr>
+            {{range .}}
+                <tr>
+                    <td>{{.MsgID}}</td>
+                    <td>{{.AuthorName}}</td>
+                    <td>{{.AuthorEmail}}</td>
+                    <td>{{.MsgTime}}</td>
+                    <td>{{.Msg}}</td>
+                </tr>
+            {{end}}
+            </table>
+        {{end}}
+    </div>
+</body>
+
+</html>
+{{end}}
