@@ -16,10 +16,8 @@ func ArticleGet(c *gin.Context) {
 		fmt.Println("parse id ", c.Param("id"), "err:", err.Error())
 		c.String(http.StatusInternalServerError, err.Error())
 	}
-	fmt.Println("article id:", id)
-	article, err := service.ArticleGetHandler(id)
 
-	fmt.Println(article)
+	article, err := service.ArticleGetHandler(id)
 	if err != nil {
 		fmt.Println("get article ", id, "err:", err.Error())
 		c.String(http.StatusInternalServerError, err.Error())

@@ -12,7 +12,7 @@ import (
 func ArticleListGet(c *gin.Context) {
 	articles, err := service.ShowArticleList()
 	if err != nil {
-		fmt.Println("get msgs from db err", err)
+		fmt.Println("get articles from db err", err)
 		c.String(http.StatusInternalServerError, err.Error())
 	}
 
