@@ -1,3 +1,6 @@
+github.com/finalone/easy-blog v0.0.0-20201028135937-4d9b0df4cd35 h1:SnjgXti4c4LftZ4XfzMaKJUYbX4vsL8Y9oxvcPKyvG8=
+github.com/finalone/easy-blog/app/model v0.0.0-20201028135937-4d9b0df4cd35 h1:X0SUDVbe8i2Si4xElLgw+9/PrAa18zphgqj15V2tk3k=
+github.com/finalone/easy-blog/app/model v0.0.0-20201028135937-4d9b0df4cd35/go.mod h1:Wev5NL9ToebCPYThYbcIQrsUI1mksWp47D607o/JtWs=
 github.com/go-sql-driver/mysql v1.4.0/go.mod h1:zAC/RDZ24gD3HViQzih4MyKcchzm+sOG5ZlKdlhCg5w=
 github.com/jmoiron/sqlx v1.2.0 h1:41Ip0zITnmWNR/vHV+S4m+VoUivnWY5E4OJfLZjCJMA=
 github.com/jmoiron/sqlx v1.2.0/go.mod h1:1FEQNm3xlJgrMD+FBdI9+xvCksHtbpVBBw5dYhBSsks=

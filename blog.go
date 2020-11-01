@@ -20,6 +20,10 @@ func main() {
 	engine.POST("/msgboard", controller.MsgBoardPost)
 	engine.GET("/article_list", controller.ArticleListGet)
 	engine.GET("/article/:id", controller.ArticleGet)
+	engine.GET("/writer", controller.WriterGet)
+	engine.GET("/writer/:id", controller.WriterGet)
+	engine.POST("/writer", controller.WriterPost)
+	engine.POST("/writer/:id", controller.WriterPost)
 	engine.Run(":12421")
 }
 

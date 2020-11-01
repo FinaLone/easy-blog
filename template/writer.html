@@ -1,0 +1,32 @@
+{{define "writer.html"}}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{.Title}}——编辑中...</title>
+        <meta charset="utf-8"/>
+    </head>
+    <body>
+        <form action="/writer{{if .ID}}/{{.ID}}{{end}}" method="POST">
+            <div>
+                <label for="title">标题:</label>
+                <input type="text" id="title" name="title" value="{{.Title}}">
+            </div>
+            <div>
+                <label for="class">分类:</label>
+                <input type="selector" id="class" name="classId" value="{{.ClassID}}">
+            </div>
+            <div>
+                <label for="abstract">摘要:</label>
+                <textarea id="abstract" name="abstract" >{{.Abstract.String}}</textarea>
+            </div>
+            <div>
+                <label for="main">正文:</label>
+                <textarea id="main" name="main">{{.Main.String}}</textarea>
+            </div>
+            <div>
+                <button type="submit">提交</button>
+            </div>
+        </form>
+    </body>
+</html>
+{{end}}
