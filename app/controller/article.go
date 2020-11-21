@@ -23,5 +23,9 @@ func ArticleGet(c *gin.Context) {
 		c.String(http.StatusInternalServerError, err.Error())
 		return
 	}
-	c.HTML(http.StatusOK, "article.html", article)
+
+	ctx := make(map[string]interface{})
+	ctx["Title"] = article.Title
+	ctx["Content"] = article
+	c.HTML(http.StatusOK, "blogs/article", ctx)
 }

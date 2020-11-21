@@ -1,0 +1,23 @@
+{{define "content"}}
+        <FORM ACTION="/WRITER{{if .id}}/{{.id}}{{end}}" METHOD="post">
+            <DIV>
+                <LABEL FOR="TITLE">标题:</LABEL>
+                <INPUT TYPE="TEXT" ID="TITLE" NAME="TITLE" VALUE="{{.tITLE}}">
+            </DIV>
+            <DIV>
+                <LABEL FOR="CLASS">分类:</LABEL>
+                <INPUT TYPE="SELECTOR" ID="CLASS" NAME="CLASSiD" VALUE="{{.cLASSid}}">
+            </DIV>
+            <DIV>
+                <LABEL FOR="ABSTRACT">摘要:</LABEL>
+                <TEXTAREA ID="ABSTRACT" NAME="ABSTRACT" >{{.aBSTRACT.sTRING}}</TEXTAREA>
+            </DIV>
+            <DIV>
+                <LABEL FOR="MAIN">正文:</LABEL>
+                <TEXTAREA ID="MAIN" NAME="MAIN">{{.mAIN.sTRING}}</TEXTAREA>
+            </DIV>
+            <DIV>
+                <BUTTON TYPE="SUBMIT">提交</BUTTON>
+            </DIV>
+        </FORM>
+{{end}}

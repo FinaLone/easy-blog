@@ -7,13 +7,21 @@ import (
 	"github.com/finalone/easy-blog/app/config"
 	"github.com/finalone/easy-blog/app/controller"
 	"github.com/gin-gonic/gin"
+	eztemp "github.com/michelloworld/ez-gin-template"
 )
 
 func main() {
 	cfg := config.Cfg
 	fmt.Println(cfg)
 	engine := gin.Default()
-	engine.LoadHTMLGlob("./template/*")
+	render := eztemp.New()
+	render.TemplatesDir = "template/"
+	render.Debug = true
+
+	engine.HTMLRender = render.Init()
+
+	fmt.Println(render.Templates)
+	//engine.LoadHTMLGlob("./template/*")
 	engine.Static("/static", "./static")
 	engine.Any("/", WebRoot)
 	engine.GET("/msgboard", controller.MsgBoardGet)
@@ -24,7 +32,8 @@ func main() {
 	engine.GET("/writer/:id", controller.WriterGet)
 	engine.POST("/writer", controller.WriterPost)
 	engine.POST("/writer/:id", controller.WriterPost)
-	engine.Run(":12421")
+	engine.GET("about", controller.About)
+	engine.Run(":12424")
 }
 
 func WebRoot(context *gin.Context) {

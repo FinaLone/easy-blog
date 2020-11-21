@@ -1,15 +1,10 @@
-{{define "article.html"}}
-<!DOCTYPE html>
-<head>
-    <title>{{.Title}}</title>
-    <meta charset="utf8"/>
-</head>
-<body>
+{{define "content"}}
+<div>
     <h1>{{.Title}}</h1>
     <p>分类:{{.ClassID}}</p>
     <p>创建时间:{{.Ctime}}</p>
     <p>更新时间:{{.Mtime}}</p>
     <p>{{.Abstract.String}}</p>
     <p>{{.Main.String}}</p>
-</body>
+</div>
 {{end }}

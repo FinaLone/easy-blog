@@ -33,8 +33,11 @@ func WriterGet(c *gin.Context) {
 			return
 		}
 	}
+	ctx := make(map[string]interface{})
+	ctx["Title"] = "编辑——" + article.Title
+	ctx["Content"] = article
 
-	c.HTML(http.StatusOK, "writer.html", article)
+	c.HTML(http.StatusOK, "blogs/writer", ctx)
 }
 
 // WriterPost accept a writer post and write to db

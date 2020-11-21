@@ -1,13 +1,4 @@
-{{ define "msgboard.html" }}
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Msgboard</title>
-    <meta charset="utf-8"/>
-    <link rel="stylesheet" type="text/css" href="../static/css/common.css">
-</head>
-
-<body>
+{{ define "content" }}
     <fieldset>
         <legend>留言</legend>
         <form action="/msgboard" method='post'>
@@ -51,7 +42,4 @@
             </table>
         {{end}}
     </div>
-</body>
-
-</html>
 {{end}}

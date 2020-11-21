@@ -18,7 +18,11 @@ func MsgBoardGet(c *gin.Context) {
 		return
 	}
 
-	c.HTML(http.StatusOK, "msgboard.html", msgs)
+	ctx := make(map[string]interface{})
+	ctx["Title"] = "留言板"
+	ctx["Content"] = msgs
+
+	c.HTML(http.StatusOK, "blogs/msgboard", ctx)
 }
 
 // MsgBoardPost handle POST request of /msgboard
@@ -35,5 +39,9 @@ func MsgBoardPost(c *gin.Context) {
 		return
 	}
 
-	c.HTML(http.StatusOK, "msgboard.html", msgs)
+	ctx := make(map[string]interface{})
+	ctx["Title"] = "留言板"
+	ctx["Content"] = msgs
+
+	c.HTML(http.StatusOK, "blogs/msgboard", ctx)
 }

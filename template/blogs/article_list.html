@@ -1,0 +1,14 @@
+{{ define "content"}}
+<div class="article_list">
+    {{ if len .}}
+    <h2>Article List:</h2>
+    <ul>
+        {{ range . }}
+        <li><a href="/article/{{.ID}}">{{.Title}}</a></li>
+        {{ end }}
+    </ul>
+    {{ else }}
+    <p>当前没有文章 :( </p>
+    {{ end }}
+</div>
+{{end}}

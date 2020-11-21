@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <title>{{.Title}}</title>
+        <meta charset="utf8"/>
+        <link rel="stylesheet" type="text/css" href="../../static/css/common.css">
+    </header>
+    <body>
+        <div class="header-fixed">
+            {{template "header"}}
+        </div>
+        <div class="content">
+            {{template "content" .Content}}
+        </div>
+    </body>
+</html>
